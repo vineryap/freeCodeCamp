@@ -63,17 +63,16 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
-Browser.site = 'https://boilerplate-mochachai.freecodecamp.repl.co/';
-const browser = new Browser();
-
-suiteSetup(function(done) {
-  return browser.visit('/', done);
-});
+Browser.site = 'https://fcc-qa-mochachai.vinrgates.repl.co/';
 
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
-
-
+  
+  const browser = new Browser();
+  
+  suiteSetup(function(done) {
+    return browser.visit('/', done);
+  });
 
   suite('Headless browser', function () {
     test('should have a working "site" property', function() {
