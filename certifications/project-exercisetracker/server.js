@@ -20,7 +20,7 @@ app.get("/api/users/", (req, res) => {
   res.json(users);
 });
 
-app.get("/api/users/:_id/:from?/:to?/:limit?/logs", (req, res) => {
+app.get("/api/users/:_id/logs", (req, res) => {
   const { _id } = req.params;
   const { from, to, limit } = req.query;
   const user = users.find((user) => user._id === _id);
